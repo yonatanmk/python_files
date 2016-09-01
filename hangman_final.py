@@ -33,7 +33,7 @@ def draw_board(hangman_pics, missed_letters, word_letters, hidden_word): #displa
         print (item, end = ' ')
     print ()
 
-def get_guess(word_letters): # Returns the player's guessed letter and filters out incorrect inputs
+def get_guess(word_letters, missed_letters): # Returns the player's guessed letter and filters out incorrect inputs
     print('Please guess a letter.')
     while True:
         guess = input()
@@ -79,7 +79,7 @@ print ("Welcome to Hangman!")
 while True:
     draw_board(hangman_pics, missed_letters, word_letters, hidden_word)
     #print (hidden_word) #Enable if you want to see the hidden word
-    guess = get_guess(word_letters) # Player inputs a letter
+    guess = get_guess(word_letters, missed_letters) # Player inputs a letter
     if guess in hidden_word:
         word_letters = word_letters + guess
         complete_word = True
