@@ -1,0 +1,4 @@
+double buffering:
+    buffer next scene while player looking at current scene
+    pygame.display.flip()
+        always use *after* drawing everything
